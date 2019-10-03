@@ -1,9 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import addHits from './components/dashboard';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+const {addHits} = require('./components/dashboard');
+const assert = require('assert');
+
+test('renders without a crash and burn', ()=> {
+    render (<App/>);
 });
+
+test('Strikes found', ()=> {
+    const {getByText} = render(<App/>);
+    getByText(/strikes/i);
+})
+
+test('A hit is added and resets score', ()=> {
+    let actual;
+    let expected;
+    actual = addHits(1)
+    expected=2;
+    expected(actual).toBe(expected);
+})

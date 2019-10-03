@@ -1,22 +1,66 @@
 .App {
   text-align: center;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+header {
+  background: #002d62; 
+  color: #A2AAAD;
+  height: 100px;
+  text-align: left;
+}
+header h1{
+  font-size: 1.25rem;
+  font-weight: 30;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-dash{
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.App-dash h1{
+  font-size: 3rem;
+  color: #FFC72C;
+  padding: 10px 20px;
 }
+
+.App-dash h2{
+  font-size: 2.25rem;
+  color: #A2AAAD;
+}
+.stat-count div{
+  color: #A2AAAD;
+  font-size: 2.25rem;
+}
+button{
+  background: #fff;
+  margin: 0 10px;
+  height: 50px;
+  width: 70px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  /* border: none; */
+}
+button:hover{
+  background: #A2AAAD;
+}
+
+.count-display{
+display: flex;
+margin: 50px auto;
+justify-content: space-evenly;
+}
+
+.dashboard-container{
+  width: 80%;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #A2AAAD;
+  background: #e0ebf0;
+}
+/* yellow: #FFC72C
+light gray: #A2AAAD */

@@ -1,37 +1,28 @@
-import React, {useState} from "react";
-import "./App.css";
+import React from "react";
 
-export default function Display() {
-  
-  
-  const [balls, setBalls] = useState(0);
-  const [strikes, setStrikes] = useState(0);
-  
+
+export default function Display({balls, strikes, hits}) { 
 
   return (
     <section className="scoreboard">
         <h1>Up To Bat</h1>
-        <div>
-            <div className="ball-count">
+        <div className='count-display'>
+            <div className="stat-count">
                 <h2>Balls</h2>
                 <div>{balls}</div>
             </div>
 
-            <div className="strike-count">
+            <div className="stat-count">
                 <h2>Strikes</h2>
                 <div>{strikes}</div>
+            </div>
+            
+            <div className="stat-count">
+                <h2>Hits</h2>
+                <div>{hits}</div>
             </div>
         </div>
     </section>   
     
   );
 }
-
-
-
-
-{/* 
-    <button className="button-balls" onClick={()=> setBalls()}>Balls</button>
-     
-    <button className="button-strikes" onClick={()=> setStrikes()}>Strikes</button>
-        */}

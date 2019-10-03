@@ -1,41 +1,56 @@
 import React, {useState} from "react";
 import Display from './display';
 
+export const addHits = hits => hits + 1;
+export const addFouls = fouls => fouls + 1;
+
 export default function Dashboard() {
   
-  
-  const [balls, setBalls] = useState(0);
-  const [strikes, setStrikes] = useState(0);
-  
+  let [balls, setBalls] = useState(0);
+  let [strikes, setStrikes] = useState(0);
+  let [fouls, setFouls] = useState(0);
+  let [hits, setHits] = useState(0);
+
+  if (strikes === 4){
+      setBalls(0);
+      setStrikes(0);
+  }
+
+  if(balls === 5){
+      setBalls(0);
+      setStrikes(0);
+  }
+
+//   if(hits){
+//     setBalls(0),
+//     setStrikes(0)
+//   }
+
 
   return (
-    <div className="container">
-      <section className="buttons-container">
-        <Display/>
+      <section className="dashboard-container">
+        <Display
+        balls={balls}
+        strikes={strikes}
+        hits={hits}/>
+        <div className='button-container'>
+            <button className="btn-balls" onClick={()=> setBalls(balls + 1)}>Ball</button>
+            <button className="btn-strikes" onClick={()=> setStrikes(strikes + 1)}>Strike</button>
+
+            <button className="btn-fouls" onClick={()=> setFouls(addFouls(fouls))}>Foul</button>
+
+            <button className="btn-hits" onClick={()=> setHits(addHits(hits))}>Hit</button>
+        </div>
       </section>
-    </div>
-    
   );
 }
 
-
-<button className="btn-balls" onClick={()=> setBalls()}>Ball</button>
-     
-<button className="btn-strikes" onClick={()=> setStrikes()}>Strike</button>
-
-<button className="btn-fouls" onClick={()=> setFouls()}>Foul</button>
-
-<button className="btn-hits" onClick={()=> setHits()}>Hit</button>
-
- 
-const [balls, setBalls] = useState(0);
-const [strikes, setStrikes] = useState(0);
-const [fouls, setFouls] = useState(0);
-const [hits, setHits] = useState(0);
-
 /*
-3 strikes/4 balls = 0 balls and strikes.
 hit = 0 balls, strikes.
-
 1 foul = +1 strike max 2. 
 */
+
+// setBalls(balls + 1)
+// setStrikes(strikes + 1)
+// setFouls(fouls + 1)
+// setHits(hits + 1)
